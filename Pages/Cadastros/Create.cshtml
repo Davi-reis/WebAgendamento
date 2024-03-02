@@ -1,0 +1,42 @@
+﻿@page
+@model WebAgendamento.Pages.Cadastro.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CadastroServico</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CadastroServico.TipoServico" class="control-label"></label>
+                <input asp-for="CadastroServico.TipoServico" class="form-control" />
+                <span asp-validation-for="CadastroServico.TipoServico" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="CadastroServico.Valor" class="control-label"></label>
+                <input asp-for="CadastroServico.Valor" class="form-control" />
+                <span asp-validation-for="CadastroServico.Valor" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <br />
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
